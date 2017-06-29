@@ -19,8 +19,11 @@ renderListItem: function(flick){
     item.querySelector('.flick-name')
     .textContent=flick.name
 
-
     this.flickArray.unshift(flick)
+
+    item.querySelector('button.remove')
+    .addEventListener('click',this.removeFlick.bind(this, flick))
+    
 /*
     item.appendChild(this.renderFavButton())
     item.appendChild(this.renderDeleteButton())
@@ -31,6 +34,21 @@ renderListItem: function(flick){
     
     return item
 },
+
+removeFlick(flick, ev)
+{
+    //remove from DOM
+    const listItem = ev.target.closest('.flick')
+    listItem.remove()
+    //remove from array
+    const i = this.flickArray.indexOf(flick)
+    this.flickArray.splice(i, 1)
+},
+
+
+
+
+
 renderFavButton: function(){
     const fav = document.createElement('BUTTON')
     fav.setAttribute('class','button alert')
