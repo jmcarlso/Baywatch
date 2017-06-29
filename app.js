@@ -17,7 +17,8 @@ renderListItem: function(flick){
     item.dataset=flick.id
 
 
-    this.flickArray.push(flick)
+    this.flickArray.unshift(flick)
+
     item.appendChild(this.renderFavButton())
     item.appendChild(this.renderDeleteButton())
     item.appendChild(this.renderUpButton())
@@ -81,8 +82,8 @@ renderDownButton: function(){
            name: f.flickName.value,
        }
 
-       this.list.appendChild(this.renderListItem(flick))
-       
+       //this.list.appendChild(this.renderListItem(flick))
+       this.list.insertBefore(this.renderListItem(flick),this.list.firstElementChild)
         this.max ++
         f.reset()
     },

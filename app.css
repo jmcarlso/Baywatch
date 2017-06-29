@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee');
+html{
+
+}
 h1 small{
     color:whitesmoke;
     font-size: 60%;
 }
 body{
     background: transparent;
-
+    background-color: cornflowerblue;
 }
 h1{
     float:right;
@@ -27,3 +30,17 @@ h1{
 .listContainer{
     background-color: whitesmoke;
 }
+
+.flick-list{
+    margin-bottom: 0;
+}
+.flick .button-group{
+    margin-bottom: 0;
+}
+.flick-name{
+    padding: 0 0.75rem;
+}
+.glick .button-group .button{
+    margin-bottom: 0;
+}
+
