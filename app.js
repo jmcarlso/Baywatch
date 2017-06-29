@@ -1,6 +1,7 @@
 const app ={
     init: function(selectors){
-        this.flicks = []
+        this.flickArray = []
+        
         this.max =0
         this.list =document.querySelector(selectors.listSelector)
 
@@ -12,6 +13,10 @@ const app ={
 renderListItem: function(flick){
     const item = document.createElement('li')
     item.textContent = flick.name
+    this.flicks =flick.name
+
+    this.flickArray.push(flick)
+    
     return item
 },
     handleSubmit: function(ev){
