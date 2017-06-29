@@ -1,9 +1,29 @@
-#fav {
-    color: white;
-    background-color: black;
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+h1 small{
+    color:whitesmoke;
+    font-size: 60%;
+}
+body{
+    background: transparent;
+
+}
+h1{
+    float:right;
+    margin-top: 0.75rem;
+    font-family: 'Bungee',cursive;
+    text-shadow: 0 0 10x #fff,
+                 0 0 20px #fff,
+                 0 0 30px #fff,
+                 0 0 40px #62e6ff,
+                 0 0 
+}
+.banner{
+    position: 'absolute';
+}
+.banner img{
+    height: 100px;
 }
 
-.negative {
-    color: black;
-    background-color: white;
+.listContainer{
+    background-color: whitesmoke;
 }

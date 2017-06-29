@@ -82,6 +82,7 @@ renderDownButton: function(){
        this.list.appendChild(this.renderListItem(flick))
        
         this.max ++
+        f.reset()
     },
 
 }
