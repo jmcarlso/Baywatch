@@ -23,6 +23,9 @@ renderListItem: function(flick){
 
     item.querySelector('button.remove')
     .addEventListener('click',this.removeFlick.bind(this, flick))
+
+    item.querySelector('button.fav')
+    .addEventListener('click',this.favFlick.bind(this, flick))
     
 /*
     item.appendChild(this.renderFavButton())
@@ -33,6 +36,12 @@ renderListItem: function(flick){
 */
     
     return item
+},
+
+favFlick(flick, ev){
+const listItem = ev.target.closest('.flick')
+flick.fav= listItem.classList.toggle('fav')
+
 },
 
 removeFlick(flick, ev)
@@ -101,6 +110,7 @@ renderDownButton: function(){
        const flick ={
            id: this.max +1,
            name: f.flickName.value,
+           fav: false,
        }
 
        //this.list.appendChild(this.renderListItem(flick))
