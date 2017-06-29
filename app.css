@@ -43,4 +43,6 @@ h1{
 .glick .button-group .button{
     margin-bottom: 0;
 }
-
+.template{
+    display: none;
+}

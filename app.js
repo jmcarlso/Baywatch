@@ -4,6 +4,7 @@ const app ={
         
         this.max =0
         this.list =document.querySelector(selectors.listSelector)
+        this.template = document.querySelector(selectors.templateSelector)
 
         document
             .querySelector(selectors.formSelector)
@@ -11,20 +12,22 @@ const app ={
     },
 
 renderListItem: function(flick){
-    const item=document.createElement('li')
-    item.textContent=flick.name
+    const item= this.template.cloneNode(true)
+    item.classList.remove('template')
     //this.flicks=flick.name
     item.dataset=flick.id
+    item.querySelector('.flick-name')
+    .textContent=flick.name
 
 
     this.flickArray.unshift(flick)
-
+/*
     item.appendChild(this.renderFavButton())
     item.appendChild(this.renderDeleteButton())
     item.appendChild(this.renderUpButton())
     item.appendChild(this.renderDownButton())
     item.style.padding='1em'
-
+*/
     
     return item
 },
@@ -93,4 +96,5 @@ renderDownButton: function(){
 app.init({
     formSelector:'form#flick-form',
     listSelector: '#flick-list',
+    templateSelector: '.flick.template'
 })
