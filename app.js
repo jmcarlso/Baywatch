@@ -13,7 +13,9 @@ const app ={
 renderListItem: function(flick){
     const item=document.createElement('li')
     item.textContent=flick.name
-    this.flicks=flick.name
+    //this.flicks=flick.name
+    item.dataset=flick.id
+
 
     this.flickArray.push(flick)
     item.appendChild(this.renderFavButton())
