@@ -26,14 +26,13 @@ renderListItem: function(flick){
 
     item.querySelector('button.fav')
     .addEventListener('click',this.favFlick.bind(this, flick))
+
+    item.querySelector('button.up')
+    .addEventListener('click',this.upFlick.bind(this,flick))
+
+    item.querySelector('button.down')
+    .addEventListener('click',this.downFlick.bind(this,flick))
     
-/*
-    item.appendChild(this.renderFavButton())
-    item.appendChild(this.renderDeleteButton())
-    item.appendChild(this.renderUpButton())
-    item.appendChild(this.renderDownButton())
-    item.style.padding='1em'
-*/
     
     return item
 },
@@ -53,11 +52,37 @@ removeFlick(flick, ev)
     const i = this.flickArray.indexOf(flick)
     this.flickArray.splice(i, 1)
 },
+upFlick(flick, ev)
+{
+  
+    let index =this.flickArray.indexOf(flick)
+    
+    
+    const listItem = ev.target.closest('.flick')
+    const temp = this.flickArray[index]
+    this.flickArray[index] =this.flickArray[index++]
+    this.flickArray[index++]=temp
+    const li = listItem.previousSibling
+    
+    this.list.insertBefore(listItem,li)
+   
+    
 
+    
+},
+downFlick(flick, ev)
+{
+    let index =this.flickArray.indexOf(flick)
+    
+         const listItem = ev.target.closest('.flick')
+    const temp = this.flickArray[index]
+    this.flickArray[index] =this.flickArray[index--]
+    this.flickArray[index--]=temp
+    const li = listItem.nextSibling
+    this.list.insertBefore(li,listItem)
 
-
-
-
+    
+},
 
     handleSubmit: function(ev){
         ev.preventDefault()

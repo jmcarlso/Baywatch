@@ -33,8 +33,9 @@ h1{
     height: 6.25rem;
 }
 
-.listContainer{
+.flick-name{
     background-color: whitesmoke;
+    height: 2.5rem;
 }
 
 .flick-list{
